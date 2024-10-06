@@ -4,6 +4,7 @@ import com.paa.dms.products.manage.items.constants.APIConstants;
 import com.paa.dms.products.manage.items.model.RequestNewProductEntity;
 import com.paa.dms.products.manage.items.model.RequestRetrieveFilterEntity;
 import com.paa.dms.products.manage.items.model.RequestRetrieveProductEntity;
+import com.paa.dms.products.manage.items.model.ResponseRetrieveFilterEntity;
 import com.paa.dms.products.manage.items.service.ProductsManageItemsService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -46,7 +47,7 @@ public class ProductsManageItemsController {
     public ResponseEntity<RequestNewProductEntity> getProduct(@RequestHeader HttpHeaders httpHeaders,
                                                              @Valid @RequestBody RequestRetrieveProductEntity userRequest) {
         log.debug(apiConstants.getLOG_READ_DATA_ENDPOINT());
-        return productsManageItemsService.findProduct(httpHeaders, userRequest);
+        return productsManageItemsService.getProduct(httpHeaders, userRequest);
     }
 
     /**
@@ -57,10 +58,10 @@ public class ProductsManageItemsController {
      * @return ResponseEntity with a list products data
      */
     @GetMapping(path = APIConstants.RETRIEVE_ITEM_LIST_ENDPOINT)
-    public ResponseEntity<RequestNewProductEntity> getProductFilter(@Valid @RequestBody RequestRetrieveFilterEntity userRequest,
-                                                                    @RequestHeader HttpHeaders httpHeaders) {
+    public ResponseEntity<ResponseRetrieveFilterEntity> getProductFilter(@RequestHeader HttpHeaders httpHeaders,
+                                                                         @Valid @RequestBody RequestRetrieveFilterEntity userRequest) {
         log.debug(apiConstants.getLOG_READ_FILTER_ENDPOINT());
-        return productsManageItemsService.findProductsList(userRequest,httpHeaders);
+        return productsManageItemsService.getProductList(httpHeaders, userRequest);
     }
 
     /**
@@ -76,5 +77,4 @@ public class ProductsManageItemsController {
         log.debug(apiConstants.getLOG_DELETE_ITEM_ENDPOINT());
         return productsManageItemsService.deleteProduct(userRequest,httpHeaders);
     }
-
 }

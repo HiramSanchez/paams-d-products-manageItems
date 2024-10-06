@@ -5,5 +5,5 @@ public class MongoConstants {
     public static final String MARKETPLACE_PRODUCTS_COLLECTION = "marketplace_products";
 
     //Querys
-    public static final String FIND_BY_UID_QUERY = "{uid:'?0'}";
+    public static final String FIND_BY_PRODUCT_ID_QUERY = "{productId:'?0'}";
 }

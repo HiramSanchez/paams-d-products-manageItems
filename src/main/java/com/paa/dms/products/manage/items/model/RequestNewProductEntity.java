@@ -1,8 +1,10 @@
 package com.paa.dms.products.manage.items.model;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class RequestNewProductEntity {
     /** Unique identifier for the product. */
     private String productId;

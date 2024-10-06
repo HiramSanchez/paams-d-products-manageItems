@@ -1,7 +1,9 @@
 package com.paa.dms.products.manage.items.model;
 
-import java.util.List;
+import lombok.Data;
 
+import java.util.List;
+@Data
 public class ResponseRetrieveFilterEntity {
-    private List<RequestNewProductEntity> products;
+    private List<MongoProductsEntity> products;
 }
