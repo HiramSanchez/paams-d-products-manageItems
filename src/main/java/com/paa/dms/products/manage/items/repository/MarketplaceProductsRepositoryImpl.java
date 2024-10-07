@@ -8,6 +8,9 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 
 import java.util.List;
+/**
+ * Custom Repository implementation for managing dynamic querys in MongoDB.
+ */
 @Slf4j
 public class MarketplaceProductsRepositoryImpl implements MarketplaceProductsRepositoryCustom{
     private final MongoTemplate mongoTemplate;
@@ -15,7 +18,9 @@ public class MarketplaceProductsRepositoryImpl implements MarketplaceProductsRep
     public MarketplaceProductsRepositoryImpl(MongoTemplate mongoTemplate) {
         this.mongoTemplate = mongoTemplate;
     }
-
+    /**
+     * Creates a query according to the filters received by the request
+     */
     @Override
     public List<MongoProductsEntity> findProductsByFilters(List<FilterEntity> filters) {
         Query query = new Query();
