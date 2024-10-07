@@ -30,18 +30,17 @@ public class ProductsManageItemsService {
                                               RequestNewProductEntity userRequest) {
         String uid = httpHeaders.getFirst("uid").toString();
         log.debug("REQUEST >>> " + "User with id #" + uid + " requested creation of product #" + userRequest.getProductId().toString());
-
-        MongoProductsEntity newProduct = new MongoProductsEntity();
-        newProduct.setColor(userRequest.getColor());
-        newProduct.setDescription(userRequest.getDescription());
-        newProduct.setGender(userRequest.getGender());
-        newProduct.setImageId(userRequest.getImageId());
-        newProduct.setName(userRequest.getName());
-        newProduct.setProductId(userRequest.getProductId());
-        newProduct.setProductType(userRequest.getProductType());
-        newProduct.setSize(userRequest.getSize());
-        newProduct.setPrice(userRequest.getPrice());
-
+        MongoProductsEntity newProduct = MongoProductsEntity.builder()
+                .color(userRequest.getColor())
+                .description(userRequest.getDescription())
+                .gender(userRequest.getGender())
+                .imageId(userRequest.getImageId())
+                .name(userRequest.getName())
+                .productId(userRequest.getProductId())
+                .productType(userRequest.getProductType())
+                .size(userRequest.getSize())
+                .price(userRequest.getPrice())
+                .build();
         marketplaceProductsRepository.save(newProduct);
         ResponseEntity response = ResponseEntity.ok("Product Created");
         log.debug("RESPONSE >>> " + response);
