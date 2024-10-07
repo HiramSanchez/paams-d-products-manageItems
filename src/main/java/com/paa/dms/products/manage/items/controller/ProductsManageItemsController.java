@@ -41,7 +41,7 @@ public class ProductsManageItemsController {
      *
      * @param httpHeaders Headers containing user information (uid)
      * @param userRequest Request body containing product id
-     * @return ResponseEntity with the product data
+     * @return ResponseEntity with the product's data
      */
     @GetMapping(path = APIConstants.READ_ITEM_DATA_ENDPOINT)
     public ResponseEntity<RequestNewProductEntity> getProduct(@RequestHeader HttpHeaders httpHeaders,

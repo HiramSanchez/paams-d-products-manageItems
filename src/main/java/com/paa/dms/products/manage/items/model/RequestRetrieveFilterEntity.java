@@ -6,5 +6,6 @@ import java.util.List;
 
 @Data
 public class RequestRetrieveFilterEntity {
+    /** List of filters applied to the product search. */
     private List<FilterEntity> filters;
 }
