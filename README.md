@@ -19,18 +19,23 @@ The **paams-d-products-manageItems** microservice is responsible for managing pr
 
 ## **API Endpoints**
 
-- **POST /api/products/new/data**  
+- **POST - /api/products/new/data**  
   `product-new-item`: Responsible for creating new product records in the database.
   
-- **GET /api/products/retrieve/filter**  
+- **GET - /api/products/retrieve/filter**  
   `retrieve-filtered-items`: Retrieves a filtered list of product data from the database.
   
-- **GET /api/products/retrieve/data**  
+- **GET - /api/products/retrieve/data**  
   `retrieve-product-item`: Retrieves specific product data from the database.
   
-- **DELETE /api/products/delete/data**  
+- **DELETE - /api/products/delete/data**  
   `product-delete-item`: Permanently deletes product records from the database.
 
+## **API Documentation**
+This project includes API documentation using swagger. Access the documentation by running it and navigating to:
+```bash
+http://localhost:8080/swagger-ui/index.html
+```
 
 ## **Requirements**
 Before running this project, ensure the following dependencies are installed:
