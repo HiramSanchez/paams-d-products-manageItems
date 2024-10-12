@@ -6,6 +6,7 @@ import com.paa.dms.products.manage.items.model.RequestRetrieveFilterEntity;
 import com.paa.dms.products.manage.items.model.RequestRetrieveProductEntity;
 import com.paa.dms.products.manage.items.model.ResponseRetrieveFilterEntity;
 import com.paa.dms.products.manage.items.service.ProductsManageItemsService;
+import com.paa.dms.products.manage.items.service.ProductsManageItemsServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
