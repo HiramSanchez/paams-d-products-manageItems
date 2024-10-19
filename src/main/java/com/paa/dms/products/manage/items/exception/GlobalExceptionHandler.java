@@ -3,7 +3,6 @@ package com.paa.dms.products.manage.items.exception;
 import com.paa.dms.products.manage.items.constants.APIConstants;
 import com.paa.dms.products.manage.items.exception.custom.ForbiddenException;
 import com.paa.dms.products.manage.items.exception.custom.NoDataFoundException;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
-@Data
 @ControllerAdvice
 /**
  * Global exception handler to manage exceptions thrown in the application.
