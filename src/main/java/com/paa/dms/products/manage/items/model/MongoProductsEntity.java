@@ -1,13 +1,11 @@
 package com.paa.dms.products.manage.items.model;
 
 import com.paa.dms.products.manage.items.constants.MongoConstants;
-import lombok.Builder;
 import lombok.Data;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Builder
 @Document(collection = MongoConstants.MARKETPLACE_PRODUCTS_COLLECTION)
 /**
  * Entity representing a product in the marketplace stored in MongoDB.

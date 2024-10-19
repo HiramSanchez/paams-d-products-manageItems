@@ -30,17 +30,16 @@ public class ProductsManageItemsServiceImpl implements ProductsManageItemsServic
                                               RequestNewProductEntity userRequest) {
         String uid = httpHeaders.getFirst("uid").toString();
         log.debug("REQUEST >>> " + "User with id #" + uid + " requested creation of product #" + userRequest.getProductId().toString());
-        MongoProductsEntity newProduct = MongoProductsEntity.builder()
-                .color(userRequest.getColor())
-                .description(userRequest.getDescription())
-                .gender(userRequest.getGender())
-                .imageId(userRequest.getImageId())
-                .name(userRequest.getName())
-                .productId(userRequest.getProductId())
-                .productType(userRequest.getProductType())
-                .size(userRequest.getSize())
-                .price(userRequest.getPrice())
-                .build();
+        MongoProductsEntity newProduct = new MongoProductsEntity();
+        newProduct.setProductId(userRequest.getProductId());
+        newProduct.setName(userRequest.getName());
+        newProduct.setDescription(userRequest.getDescription());
+        newProduct.setProductType(userRequest.getProductType());
+        newProduct.setColor(userRequest.getColor());
+        newProduct.setGender(userRequest.getGender());
+        newProduct.setSize(userRequest.getSize());
+        newProduct.setPrice(userRequest.getPrice());
+        newProduct.setImageId(userRequest.getImageId());
         marketplaceProductsRepository.save(newProduct);
         ResponseEntity response = ResponseEntity.ok("Product Created");
         log.debug("RESPONSE >>> " + response);
@@ -91,17 +90,16 @@ public class ProductsManageItemsServiceImpl implements ProductsManageItemsServic
 
         if (!foundProduct.isEmpty()) {
             var product = foundProduct.get();
-            RequestNewProductEntity response = RequestNewProductEntity.builder()
-                    .productId(product.getProductId())
-                    .name(product.getName())
-                    .description(product.getDescription())
-                    .color(product.getColor())
-                    .gender(product.getGender())
-                    .imageId(product.getImageId())
-                    .productType(product.getProductType())
-                    .size(product.getSize())
-                    .price(product.getPrice())
-                    .build();
+            RequestNewProductEntity response = new RequestNewProductEntity();
+            response.setProductId(product.getProductId());
+            response.setName(product.getName());
+            response.setDescription(product.getDescription());
+            response.setColor(product.getColor());
+            response.setGender(product.getGender());
+            response.setImageId(product.getImageId());
+            response.setProductType(product.getProductType());
+            response.setPrice(product.getPrice());
+            response.setSize(product.getSize());
 
             log.debug("RESPONSE >>> " + response);
             return ResponseEntity.ok(response);
