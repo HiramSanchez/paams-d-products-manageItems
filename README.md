@@ -6,6 +6,15 @@
  &emsp;
 [![Maven](https://img.shields.io/badge/Maven-3.9.9-gold)](https://maven.apache.org/)
 
+## Table of Contents  
+- [Description](#description)  
+- [Features](#features)  
+- [Endpoints](#api-endpoints)  
+- [Documentation](#api-documentation)  
+- [Requirements](#requirements)  
+- [Installation](#installation)  
+- [Tests](#testing)  
+- [Contact](#contact)  
 
 ## **Description**
 The **paams-d-products-manageItems** microservice is responsible for managing product data, including creating, retrieving, and deleting product records in the database. This service provides a RESTful API designed for scalability and easy integration into a microservices architecture.
@@ -66,7 +75,33 @@ Before running this project, ensure the following dependencies are installed:
     mvn clean install
     mvn spring-boot:run
     ```  
-
+## **Testing**
+This project includes unit tests to ensure code quality and proper functionality. Additionally, it leverages **SonarQube** for static code analysis. Follow the steps below to run the tests and SonarQube analysis:
+### **Running Tests**
+1. Make sure all dependencies are installed and the database is properly configured.
+2. Run the following Maven command to execute the tests:
+   ```bash
+   mvn clean test
+   ```
+3. The test results will be displayed in the terminal. To view detailed reports, check the `target/site/jococo/jococo.xml` directory.
+### **SonarQube Analysis**
+1. Start SonarQube (if using Docker):
+   ```bash
+   docker run -d --name sonarqube -p 9000:9000 sonarqube:latest
+   ```
+2. Set the `sonar-project.properties` file with your configurations, or directly send your credentials though the command.
+   ```bash
+   mvn sonar:sonar
+   ```
+   ```bash
+   #Without setting properties on sonar-project file
+   mvn clean verify sonar:sonar
+   -Dsonar.projectKey={yourProjectKey}
+   -Dsonar.host.url={yourSonarHost}
+   -Dsonar.login={YourToken}
+   -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+   ```
+   
 ## **Contact**
 For any questions or suggestions, feel free to contact me at:  
 hiramsanchez.dev@gmail.com  
