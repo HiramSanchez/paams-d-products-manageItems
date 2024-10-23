@@ -4,10 +4,12 @@
  &emsp;
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.3-lightgreen)](https://spring.io/projects/spring-boot)
  &emsp;
-[![Maven](https://img.shields.io/badge/Maven-3.9.9-gold)](https://maven.apache.org/)
+[![Maven](https://img.shields.io/badge/Maven-3.9.9-gold)](https://maven.apache.org/)  
+
+## **Description**
+The **paams-d-products-manageItems** microservice is responsible for managing product data, including creating, retrieving, and deleting product records in the database. This service provides a RESTful API designed for scalability and easy integration into a microservices architecture.
 
 ## Table of Contents  
-- [Description](#description)  
 - [Features](#features)  
 - [Endpoints](#api-endpoints)  
 - [Documentation](#api-documentation)  
@@ -15,10 +17,6 @@
 - [Installation](#installation)  
 - [Tests](#testing)  
 - [Contact](#contact)  
-
-## **Description**
-The **paams-d-products-manageItems** microservice is responsible for managing product data, including creating, retrieving, and deleting product records in the database. This service provides a RESTful API designed for scalability and easy integration into a microservices architecture.
-
 
 ## **Features**
 - **Create Product Data**: Register new products in the database.
